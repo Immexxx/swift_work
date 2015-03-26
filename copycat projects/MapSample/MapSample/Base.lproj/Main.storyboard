@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uTq-Ub-CA4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cj9-Tk-938">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Zoom" id="ZRR-yy-l0o">
+                                        <connections>
+                                            <action selector="zoomIn:" destination="BYZ-38-t0r" id="MhE-a7-5Ow"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Type" id="vHP-dN-QNn">
+                                        <connections>
+                                            <action selector="changeMapType:" destination="BYZ-38-t0r" id="eD6-1Y-QmC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Local Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rpo-ee-S0L">
+                                <rect key="frame" x="129" y="101" width="373" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="t97-89-phA"/>
+                                </connections>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zxK-gL-Qe6">
+                                <rect key="frame" x="0.0" y="139" width="600" height="417"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rpo-ee-S0L" secondAttribute="trailing" constant="16" id="2SF-Lt-9n8"/>
+                            <constraint firstAttribute="trailing" secondItem="Cj9-Tk-938" secondAttribute="trailing" id="HVk-qE-VRL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cj9-Tk-938" secondAttribute="bottom" id="HeP-Ed-mP4"/>
+                            <constraint firstItem="zxK-gL-Qe6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M1c-6b-86L"/>
+                            <constraint firstItem="Rpo-ee-S0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Mwg-7o-UPj"/>
+                            <constraint firstItem="Cj9-Tk-938" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N3f-DC-Hk6"/>
+                            <constraint firstItem="Cj9-Tk-938" firstAttribute="top" secondItem="zxK-gL-Qe6" secondAttribute="bottom" id="Ov9-PU-KNj"/>
+                            <constraint firstAttribute="trailing" secondItem="zxK-gL-Qe6" secondAttribute="trailing" id="U0M-7f-2kc"/>
+                            <constraint firstItem="zxK-gL-Qe6" firstAttribute="top" secondItem="Rpo-ee-S0L" secondAttribute="bottom" constant="8" id="Yxx-wD-Q4E"/>
+                            <constraint firstItem="Rpo-ee-S0L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="egN-Dk-Q5W"/>
+                            <constraint firstItem="zxK-gL-Qe6" firstAttribute="top" secondItem="Rpo-ee-S0L" secondAttribute="bottom" constant="8" id="hcT-dV-0lx"/>
+                            <constraint firstItem="Cj9-Tk-938" firstAttribute="top" secondItem="zxK-gL-Qe6" secondAttribute="bottom" id="zkO-zw-8IS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yW2-vv-IBg"/>
+                    <connections>
+                        <outlet property="mapView" destination="zxK-gL-Qe6" id="apG-gg-F4q"/>
+                        <outlet property="searchText" destination="Rpo-ee-S0L" id="xNq-V1-Vqm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="-557"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e6T-1s-nbq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uTq-Ub-CA4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1hA-9s-oVk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bRM-fC-rZW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeF-0T-Fao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="-557"/>
+        </scene>
+    </scenes>
+</document>

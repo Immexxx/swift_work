@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CloudKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeI-uW-99x">
+                                <rect key="frame" x="0.0" y="51" width="600" height="173"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="r5d-r0-wsR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zCi-yi-mRu">
+                                <rect key="frame" x="16" y="232" width="568" height="305"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeC-H4-QuQ">
+                                <rect key="frame" x="16" y="13" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-tU-5Eh">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="save" id="xcs-CE-7Mq">
+                                        <connections>
+                                            <action selector="saveRecord:" destination="BYZ-38-t0r" id="5nu-s9-13Y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Query" id="azq-RV-oqZ">
+                                        <connections>
+                                            <action selector="performQuery:" destination="BYZ-38-t0r" id="UtY-cX-ogI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Photo" id="zjz-jZ-qxt">
+                                        <connections>
+                                            <action selector="selectPhoto:" destination="BYZ-38-t0r" id="EbE-yy-TTe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Update" id="x6C-82-y41">
+                                        <connections>
+                                            <action selector="updateRecord:" destination="BYZ-38-t0r" id="xAz-lu-C70"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Delete" id="PJd-Ly-QfT">
+                                        <connections>
+                                            <action selector="deleteRecord:" destination="BYZ-38-t0r" id="mPw-0b-Jhk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IeI-uW-99x" firstAttribute="top" secondItem="FeC-H4-QuQ" secondAttribute="bottom" constant="8" symbolic="YES" id="3FL-mN-yKp"/>
+                            <constraint firstItem="IeI-uW-99x" firstAttribute="leading" secondItem="EU1-tU-5Eh" secondAttribute="leading" id="902-6D-b8W"/>
+                            <constraint firstAttribute="trailing" secondItem="EU1-tU-5Eh" secondAttribute="trailing" id="CYN-he-2uA"/>
+                            <constraint firstItem="zCi-yi-mRu" firstAttribute="leading" secondItem="FeC-H4-QuQ" secondAttribute="leading" id="ChM-T3-5RO"/>
+                            <constraint firstItem="zCi-yi-mRu" firstAttribute="top" secondItem="IeI-uW-99x" secondAttribute="bottom" constant="8" symbolic="YES" id="HjR-ZN-QXG"/>
+                            <constraint firstItem="FeC-H4-QuQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="13" id="LGT-8E-I1Q"/>
+                            <constraint firstItem="EU1-tU-5Eh" firstAttribute="top" secondItem="zCi-yi-mRu" secondAttribute="bottom" constant="19" id="TtY-s5-Y74"/>
+                            <constraint firstItem="EU1-tU-5Eh" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bvQ-XV-voz"/>
+                            <constraint firstItem="FeC-H4-QuQ" firstAttribute="centerX" secondItem="IeI-uW-99x" secondAttribute="centerX" id="eRf-Hf-eqk"/>
+                            <constraint firstItem="EU1-tU-5Eh" firstAttribute="trailing" secondItem="IeI-uW-99x" secondAttribute="trailing" id="fyp-Lr-sC7"/>
+                            <constraint firstItem="FeC-H4-QuQ" firstAttribute="trailing" secondItem="zCi-yi-mRu" secondAttribute="trailing" id="gg2-4z-2li"/>
+                            <constraint firstItem="EU1-tU-5Eh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="if3-KV-wsu"/>
+                            <constraint firstItem="FeC-H4-QuQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qOt-SU-6wa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressField" destination="FeC-H4-QuQ" id="rDh-YS-VM2"/>
+                        <outlet property="commentsField" destination="IeI-uW-99x" id="poa-aS-2Qf"/>
+                        <outlet property="imageView" destination="zCi-yi-mRu" id="r4A-au-V4m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="260"/>
+        </scene>
+    </scenes>
+</document>
